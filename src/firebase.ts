@@ -7,7 +7,11 @@ const config = {
     projectId: "testproject-d1289",
     storageBucket: "testproject-d1289.appspot.com",
     messagingSenderId: "746759489858"
-  };
-  firebase.initializeApp(config);
+};
+firebase.initializeApp(config);
 
-  export default firebase;
+const db = firebase.firestore();
+db.settings({ timestampsInSnapshots: true });
+
+
+export { db };

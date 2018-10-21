@@ -1,7 +1,12 @@
-export default () => {
-    return [
-        { title: 'bajs', views: 2},
-        { title: 'science parken', views: 32},
-        { title: 'Keylinx är grejer', views: 22}
-    ];
+import * as _ from 'lodash';
+import * as Globals from './../Globals';
+
+export default (state: any = [], action: any) => {
+    
+    switch (action.type) {
+        case Globals.GetPosts:
+            return _.mapKeys(action.payload, 'id');
+    }
+    return state;
+   
 };
