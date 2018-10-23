@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchPosts } from '../../actions/index';
 // import { IPostDto } from 'src/interfaces/interfaces';
+import * as classes from './PostList.css';
 import * as _ from 'lodash';
 
 import NewPost from './../newPost/NewPost';
@@ -31,7 +32,7 @@ import NewPost from './../newPost/NewPost';
             <div>
                 <div className="row">
                     <div className="col-sm-4">
-                        <button className="btn btn-secondary" onClick={() => this.setState({isNewPost: true})}>Add New</button>
+                        <button className={`${classes.BajsKnapp} btn btn-primary`} onClick={() => this.setState({isNewPost: true})}>Add New</button>
                         <ul className="list-group">
                             {this.renderList()}
                         </ul>
